@@ -1,9 +1,137 @@
 @use '../../../_templates/scss/template' as template;
+$box-length: 400px;
 .frame {
     @include template.frame;
-    background-color: aqua;
+    background-color: rgb(56, 186, 238);
 }
 
 .center {
     @include template.center-v1;
+}
+
+.shape {
+    // Position
+    @include template.center-v1;
+    // Sizing
+    width: calc($box-length/4);
+    height: calc($box-length/4);
+}
+
+.circle {
+    visibility: hidden;
+    // Shape
+    border-radius: 50%;
+    // Color
+    background-color: #ffffff;
+    box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
+    // Animation
+    animation: circle-animation 1s ease-in-out infinite;
+}
+
+.penta {
+    // Sizing
+    width: calc($box-length/3);
+    height: auto;
+    //visibility: hidden;
+    transform: translate(-50%, -50%) scale(0);
+    // Animation
+    animation: penta-animation 1s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.penta-stripes {
+    @include template.center-v1;
+    width: 15px;
+    height: 5px;
+    background-color: #ffffff;
+    transform-origin: 100px;
+}
+
+@for $i from 0 through 4 {
+    .penta-stripe-#{$i} {
+        transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+        animation: penta-stripe-animation-#{$i} 1s ease-in-out infinite;
+    }
+}
+
+.tri {
+    visibility: hidden;
+    // Sizing
+    height: auto;
+    // Animation
+    animation: tri-animation 1s ease-in-out;
+    animation-delay: 2s;
+}
+
+@keyframes circle-animation {
+    0% {
+        transform: translate(-50px, -300px);
+    }
+    14% {
+        transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+    }
+    29% {
+        transform: translate(-50px, -201px);
+    }
+    43% {
+        transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+    }
+    57% {
+        transform: translate(-50px, -104px);
+    }
+    71% {
+        transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+    }
+    85% {
+        transform: translate(-50px, -50px) scaleX(1.1) scaleY(0.9);
+    }
+    100% {
+        transform: translate(-50px, -50px) scale(0, 0);
+    }
+}
+
+@keyframes penta-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    90% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+}
+
+@for $i from 0 through 4 {
+    .penta-stripe-#{$i} {
+        transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+        animation: penta-stripe-animation-#{$i} 1s ease-in-out infinite;
+    }
+    @keyframes penta-stripe-animation-#{$i} {
+        0% {
+            transform: translate(-2.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        50% {
+            transform: translate(-2.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 0px;
+            opacity: 100%;
+        }
+        75% {
+            transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 100px;
+        }
+        100% {
+            transform: translate(-202.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+    }
 }
