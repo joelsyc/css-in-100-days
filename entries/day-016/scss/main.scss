@@ -1,5 +1,6 @@
 @use '../../../_templates/scss/template' as template;
 $box-length: 400px;
+$animation-length: 12s;
 .frame {
     @include template.frame;
     background-color: rgb(56, 186, 238);
@@ -9,38 +10,48 @@ $box-length: 400px;
     @include template.center-v1;
 }
 
-.shape {
-    // Position
-    @include template.center-v1;
+.circle {
+    //visibility: hidden;
     // Sizing
     width: calc($box-length/4);
     height: calc($box-length/4);
-}
-
-.circle {
-    visibility: hidden;
     // Shape
     border-radius: 50%;
     // Color
     background-color: #ffffff;
     box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
+}
+
+.circle1 {
     // Animation
-    animation: circle-animation 1s ease-in-out infinite;
+    animation: circle1-animation $animation-length ease-in-out infinite;
+}
+
+.circle2 {
+    // Animation
+    animation: circle2-animation $animation-length ease-in-out infinite;
 }
 
 .penta {
+    //visibility: hidden;
     // Sizing
     width: calc($box-length/3);
     height: auto;
-    //visibility: hidden;
     transform: translate(-50%, -50%) scale(0);
     // Animation
-    animation: penta-animation 1s ease-in-out infinite;
-    animation-delay: 1s;
+    animation: penta-animation $animation-length ease-in-out infinite;
 }
 
-.penta-stripes {
-    @include template.center-v1;
+.tri {
+    //visibility: hidden;
+    // Sizing
+    width: calc($box-length/3);
+    height: auto;
+    // Animation
+    animation: tri-animation $animation-length ease-in-out infinite;
+}
+
+.stripes {
     width: 15px;
     height: 5px;
     background-color: #ffffff;
@@ -49,41 +60,45 @@ $box-length: 400px;
 
 @for $i from 0 through 4 {
     .penta-stripe-#{$i} {
+        //visibility: hidden;
         transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
-        animation: penta-stripe-animation-#{$i} 1s ease-in-out infinite;
+        animation: penta-stripe-animation-#{$i} $animation-length ease-in-out infinite;
     }
 }
 
-.tri {
-    visibility: hidden;
-    // Sizing
-    height: auto;
-    // Animation
-    animation: tri-animation 1s ease-in-out;
-    animation-delay: 2s;
+@for $i from 0 through 2 {
+    .tri-stripe-#{$i} {
+        //visibility: hidden;
+        transform: translate(-102.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+        transform-origin: 100px;
+        animation: tri-stripe-animation-#{$i} $animation-length ease-in-out infinite;
+    }
 }
 
-@keyframes circle-animation {
+@keyframes circle1-animation {
     0% {
         transform: translate(-50px, -300px);
     }
-    14% {
+    4% {
         transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
     }
-    29% {
+    9% {
         transform: translate(-50px, -201px);
     }
-    43% {
+    13% {
         transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
     }
-    57% {
+    17% {
         transform: translate(-50px, -104px);
     }
-    71% {
+    21% {
         transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
     }
-    85% {
+    25% {
         transform: translate(-50px, -50px) scaleX(1.1) scaleY(0.9);
+    }
+    30% {
+        transform: translate(-50px, -50px) scale(0, 0);
     }
     100% {
         transform: translate(-50px, -50px) scale(0, 0);
@@ -94,14 +109,23 @@ $box-length: 400px;
     0% {
         transform: translate(-50%, -50%) scale(0);
     }
-    50% {
+    33% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    37% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    40% {
         transform: translate(-50%, -50%) scale(1.5);
     }
-    60% {
+    42% {
         transform: translate(-50%, -50%) scale(1);
     }
-    90% {
+    46% {
         transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0)
     }
     100% {
         transform: translate(-50%, -50%) scale(0)
@@ -109,29 +133,106 @@ $box-length: 400px;
 }
 
 @for $i from 0 through 4 {
-    .penta-stripe-#{$i} {
-        transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
-        animation: penta-stripe-animation-#{$i} 1s ease-in-out infinite;
-    }
     @keyframes penta-stripe-animation-#{$i} {
         0% {
             transform: translate(-2.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
             transform-origin: 0px;
             opacity: 0%;
         }
-        50% {
+        42% {
             transform: translate(-2.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
             transform-origin: 0px;
-            opacity: 100%;
+            opacity: 0%;
         }
-        75% {
+        46% {
             transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
             transform-origin: 100px;
+            opacity: 100%;
+        }
+        50% {
+            transform: translate(-202.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 200px;
+            opacity: 0%;
         }
         100% {
             transform: translate(-202.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
             transform-origin: 200px;
             opacity: 0%;
         }
+    }
+}
+
+@for $i from 0 through 2 {
+    @keyframes tri-stripe-animation-#{$i} {
+        0% {
+            transform: translate(-2.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        62% {
+            transform: translate(-2.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        66% {
+            transform: translate(-102.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 100px;
+            opacity: 100%;
+        }
+        70% {
+            transform: translate(-202.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+        100% {
+            transform: translate(-202.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+    }
+}
+
+@keyframes tri-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    62% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    68% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+}
+
+@keyframes circle2-animation {
+    0% {
+        transform: translate(-50px, -50px) scale(0);
+    }
+    70% {
+        transform: translate(-50px, -50px) scale(0);
+    }
+    75% {
+        transform: translate(-50px, -50px) scale(1.5);
+    }
+    80% {
+        transform: translate(-50px, -50px) scale(1);
+    }
+    85% {
+        transform: translate(-50px, -50px) scale(1);
+    }
+    100% {
+        transform: translate(-50px, 200px) scale(1);
     }
 }
