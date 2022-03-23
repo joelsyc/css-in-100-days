@@ -5,5 +5,8 @@ This repository hosts my entries to the 100 Days CSS Challenge [Link](https://10
 ## Daily Entries
 
 
-## Dependencies
-- Sass (Dart) for CSS
+## Used Tech
+- dart sass
+- pnpm
+- html
+- vanilla js
