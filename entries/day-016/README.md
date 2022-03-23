@@ -7,7 +7,7 @@ The bouncing ball uses the following fall equation:
 
 where
 ![equation2](https://latex.codecogs.com/svg.image?t&space;=&space;\frac{t_{real}}{0.3}&space;[s]);
-![equation3](https://latex.codecogs.com/svg.image?g&space;=&space;98.1&space;\left&space;[\frac{px}{s}\right&space;]); and
+![equation3](https://latex.codecogs.com/svg.image?g&space;=&space;98.1&space;\left&space;[\frac{px}{s^2}\right&space;]); and
 ![equation4](https://latex.codecogs.com/svg.image?m&space;=&space;1).
 
 The following table shows the values of translateY:
