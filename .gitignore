@@ -4,4 +4,6 @@
 *.scss.map
 
 node_modules
-pnpm-lock
+pnpm-lock.yaml
+package.json
+.gitignore
