@@ -1,0 +1,108 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+// use only the available space inside the 400x400 frame
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #e4e4e4;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    position: absolute;
+    top: -75px;
+    left: -75px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    box-shadow: 2px 2px 3px rgba($color: #000000, $alpha: 0.2);
+}
+
+$anime-len: 4s;
+#circle-0 {
+    transform: scale(0);
+    background: #727272;
+    animation: circle-0 $anime-len ease-in-out infinite;
+}
+
+#circle-1 {
+    transform: scale(0);
+    background: #ffae00;
+    animation: circle-1 $anime-len ease-in-out infinite;
+}
+
+#circle-2 {
+    transform: scale(0);
+    background: #ffffff;
+    animation: circle-2 $anime-len ease-in-out infinite;
+}
+
+@keyframes circle-0 {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    90% {
+        transform: scale(0.75);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes circle-1 {
+    0% {
+        transform: scale(0);
+    }
+    25% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0.75);
+    }
+    90% {
+        transform: scale(0.50);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes circle-2 {
+    0% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(0.5);
+    }
+    90% {
+        transform: scale(0.25);
+    }
+    100% {
+        transform: scale(0);
+    }
+}

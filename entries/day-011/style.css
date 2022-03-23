@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  -webkit-box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.sky {
+  width: 100%;
+  height: 60%;
+  background-color: #ddd;
+}
+
+.floor {
+  width: 100%;
+  height: 40%;
+  background-color: #333;
+}
+
+.shoe {
+  width: 150px;
+  height: 130px;
+  border: 1px dotted #000;
+  background-image: url("./doc-martens.svg");
+  background-repeat: no-repeat;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+  -webkit-animation: shoe-walking 3s ease-out infinite;
+          animation: shoe-walking 3s ease-out infinite;
+}
+
+.shoe--left {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+@-webkit-keyframes shoe-walking {
+  0% {
+    -webkit-transform: translate(-100%, -60%) rotate(30deg);
+            transform: translate(-100%, -60%) rotate(30deg);
+  }
+  25% {
+    -webkit-transform: translate(50%, -100%) rotate(-30deg);
+            transform: translate(50%, -100%) rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: translate(50%, -50%) rotate(0deg);
+            transform: translate(50%, -50%) rotate(0deg);
+  }
+  75% {
+    -webkit-transform: translate(-100%, -60%) rotate(30deg);
+            transform: translate(-100%, -60%) rotate(30deg);
+  }
+  100% {
+    -webkit-transform: translate(-100%, -60%) rotate(30deg);
+            transform: translate(-100%, -60%) rotate(30deg);
+  }
+}
+
+@keyframes shoe-walking {
+  0% {
+    -webkit-transform: translate(-100%, -60%) rotate(30deg);
+            transform: translate(-100%, -60%) rotate(30deg);
+  }
+  25% {
+    -webkit-transform: translate(50%, -100%) rotate(-30deg);
+            transform: translate(50%, -100%) rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: translate(50%, -50%) rotate(0deg);
+            transform: translate(50%, -50%) rotate(0deg);
+  }
+  75% {
+    -webkit-transform: translate(-100%, -60%) rotate(30deg);
+            transform: translate(-100%, -60%) rotate(30deg);
+  }
+  100% {
+    -webkit-transform: translate(-100%, -60%) rotate(30deg);
+            transform: translate(-100%, -60%) rotate(30deg);
+  }
+}

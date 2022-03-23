@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+            <div class="widget">
+                <div class="widget_header">
+                    <div class="widget_header_heading">
+                        <div class="widget_header_heading_title">
+                            Weekly Report
+                        </div>
+                        <div class="widget_header_heading_subtitle">
+                            01.Feb - 07.Feb
+                        </div>
+                    </div>
+                    <div class="widget_header_aside">
+                        <div class="widget_header_aside_title">
+                            Revenue
+                        </div>
+                        <div class="widget_header_aside_subtitle">
+                            $3621.79
+                        </div>
+                    </div>
+                </div>
+                <div class="widget_body">
+                    <div class="widget_body_graphLegend graph_legend">
+                        <div class="widget_body_graphLegend_line1">
+                            <svg class="graph_legend_line">
+                                <polyline points="0,4 10,4" class="graph_legend_line-1" />
+                            </svg>
+                        </div>
+                        <div class="widget_body_graphLegend_label1">Views</div>
+                        <div style="width: 10px;"></div>
+                        <div class="widget_body_graphLegend_line2">
+                            <svg class="graph_legend_line">
+                                <polyline points="0,4 10,4" class="graph_legend_line-2" />
+                            </svg>
+                        </div>
+                        <div class="widget_body_graphLegend_label2">Purchases</div>
+                    </div>
+                    <div class="widget_body_graphBody">
+                        <svg class="graph">
+                            <!-- Grid -->
+                            <polyline points="0,0 280,0" class="graph_grid" />
+                            <polyline points="0,50 280,50" class="graph_grid" />
+                            <polyline points="0,100 280,100" class="graph_grid" />
+                            <!-- Line 1 -->
+                            <polyline points="20,20 60,48 100,52 140,64 180,30 220,37 260,50" class="graph_line line-1"/>
+                            <!-- Line 2 -->
+                            <polyline points="20,60 60,70 100,80 140,90 180,50 220,50 260,60" class="graph_line line-2"/>
+                            <!-- Points (Line 1) -->
+                            <circle cx="20" cy="20" r="3" class="line-1_point" id="point-1"/>
+                            <circle cx="60" cy="48" r="3" class="line-1_point" id="point-2"/>
+                            <circle cx="100" cy="52" r="3" class="line-1_point" id="point-3"/>
+                            <circle cx="140" cy="64" r="3" class="line-1_point" id="point-4"/>
+                            <circle cx="180" cy="30" r="3" class="line-1_point" id="point-5"/>
+                            <circle cx="220" cy="37" r="3" class="line-1_point" id="point-6"/>
+                            <circle cx="260" cy="50" r="3" class="line-1_point" id="point-7"/>
+                            <!-- Points (Line 2) -->
+                            <circle cx="20" cy="60" r="3" class="line-2_point" id="point-1"/>
+                            <circle cx="60" cy="70" r="3" class="line-2_point" id="point-2"/>
+                            <circle cx="100" cy="80" r="3" class="line-2_point" id="point-3"/>
+                            <circle cx="140" cy="90" r="3" class="line-2_point" id="point-4"/>
+                            <circle cx="180" cy="50" r="3" class="line-2_point" id="point-5"/>
+                            <circle cx="220" cy="50" r="3" class="line-2_point" id="point-6"/>
+                            <circle cx="260" cy="60" r="3" class="line-2_point" id="point-7"/>
+                        </svg>
+                    </div>
+                    <div class="widget_body_graphXAxis">
+                        <div class="widget_body_graphXAxis_label1">Mon</div>
+                        <div class="widget_body_graphXAxis_label2">Tue</div>
+                        <div class="widget_body_graphXAxis_label3">Wed</div>
+                        <div class="widget_body_graphXAxis_label4">Thu</div>
+                        <div class="widget_body_graphXAxis_label5">Fri</div>
+                        <div class="widget_body_graphXAxis_label6">Sat</div>
+                        <div class="widget_body_graphXAxis_label7">Sun</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

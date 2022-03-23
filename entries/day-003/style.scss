@@ -1,0 +1,251 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: rgb(38, 52, 58);
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: frame-background 20s linear infinite;
+}
+
+@keyframes frame-background {
+    0% {background: #10172b;}
+    13% {background: #fcce00;}
+    25% {background: rgb(201, 236, 252);}
+    38% {background: rgb(204, 252, 216)}
+    50% {background: rgb(221, 107, 0);}
+    63% {background: #805315;}
+    75% {background: #000D2A;}
+    83% {background: #0A0734;}
+    100% {background: #10172b;}
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#triangle-01, #triangle-02, #sun, #moon, #sand, #shadow, #hole {
+    position: absolute;
+    //border: 1px dashed #aaa;
+    //background: #fff;
+}
+
+#pic {
+    width: 400px;
+    height: 400px;
+}
+
+#triangle-01 {
+    top: 200px;
+    left: 150px;
+    z-index: 9;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    background: #fff;
+    mask-image: linear-gradient(30deg, rgba(0,0,0,1) 63.5%, rgba(0,0,0,0) 41.5%);
+    animation: triangle-01-animation 20s linear infinite;
+}
+
+@keyframes triangle-01-animation {
+    0% {background: #838383;}
+    13% {background: #ffffff;}
+    25% {background: rgb(122, 122, 122);}
+    38% {background: rgb(0, 0, 0)}
+    50% {background: rgb(126, 126, 126);}
+    63% {background: #ffffff;}
+    75% {background: rgb(126, 126, 126);}
+    83% {background: rgb(0, 0, 0);}
+    100% {background: #808080;}
+}
+
+#triangle-02 {
+    top: 200px;
+    left: 150px;
+    z-index: 9;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    background: #aaaaaa;
+    mask-image: linear-gradient(30deg, rgba(0,0,0,0) 63.5%, rgba(0,0,0,1) 41.5%);
+}
+
+#sun {
+    top: 125px;
+    left: 90px;
+    //z-index: 40;
+    width: 50px;
+    height: 225px;
+    transform: rotate(180deg);
+    animation: sun-animation 20s linear infinite;
+}
+
+@keyframes sun-animation {
+    0% {
+        top: 125px;
+        left: 90px;
+        height: 225px;
+        transform: rotate(-90deg);
+    }
+
+    25% {
+        top: 75px;
+        left: 175px;
+        height: 150px;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 135px;
+        left: 250px;
+        height: 225px;
+        transform: rotate(90deg);
+    }
+
+    75% {
+        top: 295px;
+        left: 175px;
+        height: 125px;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        top: 125px;
+        left: 90px;
+        height: 225px;
+        transform: rotate(270deg);
+    }
+}
+
+#moon {
+    top: 125px;
+    left: 90px;
+    //z-index: 40;
+    width: 50px;
+    height: 225px;
+    transform: rotate(-90deg);
+    animation: moon-animation 20s linear infinite;
+}
+
+@keyframes moon-animation {
+    0% {
+        top: 135px;
+        left: 250px;
+        height: 225px;
+        transform: rotate(90deg);
+    }
+
+    25% {
+        top: 295px;
+        left: 175px;
+        height: 125px;
+        transform: rotate(180deg);
+    }
+
+    50% {
+        top: 125px;
+        left: 90px;
+        height: 225px;
+        transform: rotate(270deg);
+    }
+
+    75% {
+        top: 75px;
+        left: 175px;
+        height: 150px;
+        transform: rotate(360deg);
+    }
+
+    100% {
+        top: 135px;
+        left: 250px;
+        height: 225px;
+        transform: rotate(450deg);
+    }
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.circle-sun {
+    background: #FFE600;
+}
+
+.circle-moon {
+    background: #ccc;
+}
+
+#sand {
+    top: 250px;
+    left: 0px;
+    z-index: 10;
+    width: 400px;
+    height: 150px;
+    background: #FBF5A8;
+    animation: sand-animation 20s ease-in-out infinite;
+}
+
+@keyframes sand-animation {
+    0% {background: #0a0a53;}
+    25% {background: #FBF5A8;}
+    50% {background: #383a35;}
+    75% {background: #8a7994;}
+    100% {background: #0a0a53;}
+}
+
+#shadow {
+    top: 250px;
+    left: 0px;
+    z-index: 15;
+    width: 400px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(128px 0%, 273px 0%, 50% 50%);
+    animation: shadow-animation 10s linear infinite;
+}
+
+@keyframes shadow-animation {
+    0% {clip-path: polygon(128px 0%, 273px 0%, 100% 0%);}
+    25% {clip-path: polygon(128px 0%, 273px 0%, 75% 25%);}
+    50% {clip-path: polygon(128px 0%, 273px 0%, 50% 20%);}
+    75% {clip-path: polygon(128px 0%, 273px 0%, 25% 25%);}
+    100% {clip-path: polygon(128px 0%, 273px 0%, 0% 0%);}
+}
+
+#hole {
+    left: -83px; 
+    top: -83px;
+    z-index: 20;
+    width: 250px;
+    height: 250px;
+    background: #24242400;
+    border: 160px solid #242424;
+    border-radius: 300px;
+    animation: hole-animation 20s ease-in-out infinite;
+}
+
+@keyframes hole-animation {
+    80% {background: #24242400;}
+    85% {background: #242424ff;}
+}

@@ -1,0 +1,9 @@
+@use '../../../_templates/scss/template' as template;
+.frame {
+    @include template.frame;
+    background-color: aqua;
+}
+
+.center {
+    @include template.center-v1;
+}

@@ -1,0 +1,127 @@
+// use only the available space inside the 400x400 frame
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: rgb(41, 34, 34);
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    background-color: rgb(255, 217, 0);
+    box-shadow: 4px 4px 8px #0000001a;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    &__front {
+        backface-visibility: hidden;
+        //transition: all 1s ease;
+    }
+    &__back {
+        backface-visibility: hidden;
+        //transition: all 1s ease;
+        transform: translate(-50%, -50%) rotateX(180deg);
+    }
+    &:hover {
+        transform: translate(-50%, -50%) rotateX(180deg);
+    }
+}
+
+.bike {
+    animation: bike-animation 1s ease-in-out infinite;
+}
+
+.heli {
+    animation: heli-animation 2s ease-in-out infinite;
+}
+
+.street,
+.sky {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.streaks,
+.clouds {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: rgb(58, 57, 57);
+}
+
+.streaks {
+    top: 115px;
+    margin-left: 3px;
+}
+
+.clouds {
+    top: 0px;
+}
+
+@for $i from 1 through 8 {
+    .streak-#{$i} {
+        width: $i*5px;
+        animation: streak-animation $i*.75s linear infinite;
+    }
+    .cloud-#{$i} {
+        top: $i * 15px;
+        animation: streak-animation $i*.75s linear infinite;
+    }
+}
+
+@keyframes bike-animation {
+    0% {
+        transform: scaleY(1) translateY(0%);
+    }
+    50% {
+        transform: scaleY(0.9) translateY(10%);
+    }
+    100% {
+        transform: scaleY(1) translateY(0%);
+    }
+}
+
+@keyframes heli-animation {
+    0% {
+        transform: translateY(20%);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(20%);
+    }
+}
+
+@keyframes streak-animation {
+    from {
+        transform: translateX(200px);
+    }
+    to {
+        transform: translateX(-100px);
+    }
+}

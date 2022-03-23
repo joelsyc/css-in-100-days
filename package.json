@@ -1,0 +1,12 @@
+{
+    "dependencies": {
+        "sass": "^1.49.9"
+
+    },
+
+    "scripts": {
+        "compile-sass": "sass ./entries/day-016/scss/main.scss ./entries/day-016/css/style.css",
+        "watch-sass": "sass --watch ./entries/day-016/scss/main.scss ./entries/day-016/css/style.css"
+
+    }
+}
