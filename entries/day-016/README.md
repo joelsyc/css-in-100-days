@@ -22,10 +22,12 @@ The following table shows the values of translateY:
 | 1.5       | 0        |-4.75    |
 
 ## Keyframes
-Circle1: t=0 to t=1.5s
-Triangle: t=1.5s to t=2.5s
-Pentagon: t=2.5s to t=3.5s
-Circle2: t=3.5s to t=5s
+| Element | Start Time | End Time |
+|   ---   |     ---    |    ---   |
+| circle1 |     t=0    |   t=1.5  |
+|   tri   |    t=1.5   |   t=2.5  |
+|  penta  |    t=2.5   |   t=3.5  |
+| circle2 |    t=3.5   |   t=5    |
 
 No animation-delay!
 
