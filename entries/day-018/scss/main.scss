@@ -1,0 +1,74 @@
+@use 'template';
+.frame {
+    @include template.frame;
+}
+
+.center {
+    @include template.center-v1;
+}
+
+.color-upper {
+    background-color: black;
+}
+
+.color-lower {
+    background-color: white;
+}
+
+.box {
+    width: 400px;
+    height: 200px;
+}
+
+.blob {
+    width: 400px;
+    height: 200px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scaleY(0);
+}
+
+.blob-upper {
+    // Animation
+    animation: blob-upper-animation 5s ease-in-out infinite;
+}
+
+.blob-lower {
+    // Animation
+    animation: blob-lower-animation 5s ease-in-out infinite;
+}
+
+@keyframes blob-upper-animation {
+    0% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    25% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scaleY(1.5);
+    }
+    75% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+}
+
+@keyframes blob-lower-animation {
+    0% {
+        transform: translate(-50%, -50%) scaleY(1.5);
+    }
+    25% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    75% {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scaleY(1.5);
+    }
+}

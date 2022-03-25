@@ -1,25 +1,90 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 .frame {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    margin-top: -200px;
-    margin-left: -200px;
-    border-radius: 2px;
-    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background: #fff;
-    color: #333;
-    font-family: 'Open Sans', Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.color-upper {
+  background-color: black;
+}
+
+.color-lower {
+  background-color: white;
+}
+
+.box {
+  width: 400px;
+  height: 200px;
+}
+
+.blob {
+  width: 400px;
+  height: 200px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.blob-upper {
+  animation: blob-upper-animation 5s ease-in-out infinite;
+}
+
+.blob-lower {
+  animation: blob-lower-animation 5s ease-in-out infinite;
+}
+
+@keyframes blob-upper-animation {
+  0% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  25% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scaleY(1.5);
+  }
+  75% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+}
+@keyframes blob-lower-animation {
+  0% {
+    transform: translate(-50%, -50%) scaleY(1.5);
+  }
+  25% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  75% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleY(1.5);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
