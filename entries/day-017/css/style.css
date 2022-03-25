@@ -30,6 +30,14 @@
   gap: 1rem;
 }
 
+.border-rounded {
+  border-radius: 0.4rem;
+}
+
+.box-shadow-light {
+  box-shadow: 4px 4px 16px #0000002a;
+}
+
 .stripes {
   transform: translate(0rem, -10rem) rotate(45deg);
   width: 25rem;
@@ -40,6 +48,64 @@
   width: 40rem;
   height: 0.3rem;
   background-color: #333;
+}
+
+.penrose {
+  width: 15rem;
+  height: 15rem;
+  background-color: #555;
+}
+
+.penrose-bars {
+  width: 8rem;
+  height: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.penrose-bar-1 {
+  transform: rotate(120deg) skew(-30deg) translate(100px, 100px);
+  background-color: #ddd;
+}
+
+.penrose-bar-2 {
+  transform: rotate(60deg) skew(30deg) translate(-65.5px, 40px);
+  background-color: #ddd;
+}
+
+.penrose-bar-3 {
+  transform: rotate(60deg) skew(-30deg) translate(-33px, 16px);
+  background-color: #bbb;
+}
+
+.penrose-bar-4 {
+  transform: rotate(0deg) skew(30deg) translate(-68.5px, 18px);
+  background-color: #bbb;
+}
+
+.penrose-bar-5 {
+  transform: rotate(0deg) skew(-30deg) translate(-34px, 42px);
+  background-color: #999;
+}
+
+.penrose-bar-6 {
+  transform: rotate(120deg) skew(30deg) translate(-1.5px, 76px);
+  background-color: #999;
+}
+
+.penrose-bar-shorter {
+  width: 3rem;
+  transform: rotate(60deg) skew(30deg) translate(-53px, 5px);
+  background-color: #ddd;
+}
+
+.penrose:hover .penrose-bar-1, .penrose:hover .penrose-bar-2, .penrose:hover .penrose-bar-shorter {
+  background-color: #999;
+}
+.penrose:hover .penrose-bar-3, .penrose:hover .penrose-bar-4 {
+  background-color: #ddd;
+}
+.penrose:hover .penrose-bar-5, .penrose:hover .penrose-bar-6 {
+  background-color: #bbb;
 }
 
 /*# sourceMappingURL=style.css.map */
