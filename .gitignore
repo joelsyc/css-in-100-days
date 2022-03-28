@@ -7,3 +7,5 @@ node_modules
 pnpm-lock.yaml
 package.json
 .gitignore
+entries/day-018/calc.ods
+entries/day-018/.~lock.calc.ods#
