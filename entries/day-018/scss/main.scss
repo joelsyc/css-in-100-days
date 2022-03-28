@@ -7,12 +7,12 @@
     @include template.center-v1;
 }
 
-.color-upper {
-    background-color: black;
+.color-light {
+    background-color: #F58AA1;
 }
 
-.color-lower {
-    background-color: white;
+.color-dark {
+    background-color: #361E23;
 }
 
 .box {
@@ -27,17 +27,17 @@
     transform: translate(-50%, -50%) scaleY(0);
 }
 
-.blob-upper {
+.blob-light {
     // Animation
-    animation: blob-upper-animation 5s linear infinite;
+    animation: blob-light-animation 5s linear infinite;
 }
 
-.blob-lower {
+.blob-dark {
     // Animation
-    animation: blob-lower-animation 5s linear infinite;
+    animation: blob-dark-animation 5s linear infinite;
 }
 
-@keyframes blob-upper-animation {
+@keyframes blob-light-animation {
     0% {
         transform: translate(-50%, -50%) scaleY(1.5);
     }
@@ -71,7 +71,7 @@
     }
 }
 
-@keyframes blob-lower-animation {
+@keyframes blob-dark-animation {
     0%,
     5% {
         transform: translate(-50%, -50%) scaleY(0);
