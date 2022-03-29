@@ -1,0 +1,14 @@
+@use 'template';
+:root {
+    --color-1: #9966cc;
+    --color-2: #007fff;
+    --color-3: #a4c639;
+}
+
+.frame {
+    @include template.frame;
+}
+
+.center {
+    @include template.center-v1;
+}
