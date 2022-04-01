@@ -1,0 +1,161 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+// use only the available space inside the 400x400 frame
+//
+$frame_background: linear-gradient(to top left, #A7A7A7, #828282);
+//
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: $frame_background;
+    color: #ACC1BE;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+$watch_width: 237px;
+.outer_ring-1 {
+    width: $watch_width;
+    height: $watch_width;
+    background: linear-gradient(to left, #585254, #63585C);
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 4px 0px rgba(255, 255, 255, 0.49);
+}
+
+.outer-ring-2 {
+    position: absolute;
+    top: 0%;
+    width: $watch_width;
+    height: $watch_width;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.49);
+}
+
+$screen-width: 193px;
+$screen-background-color: #322525;
+.screen-1 {
+    position: absolute;
+    top: $screen-width / 8;
+    left: $screen-width / 8;
+    width: $screen-width;
+    height: $screen-width;
+    background: $screen-background-color;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px 0px rgba(255, 255, 255, 0.49);
+}
+
+.screen-2 {
+    position: absolute;
+    top: $screen-width / 8;
+    left: $screen-width / 8;
+    width: $screen-width;
+    height: $screen-width;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.49);
+}
+
+.screen-3 {
+    position: absolute;
+    top: $screen-width / 8;
+    left: $screen-width / 8;
+    width: $screen-width;
+    height: $screen-width;
+    background: rgba($color: rgba(255, 255, 255, 0), $alpha: 0.0);
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 8px 0px rgba(0, 0, 0, 0.49);
+}
+
+$dash-ring-thickness: 6px;
+$dash-ring-width: 186px - $dash-ring-thickness;
+$dash-ring-color: #EAA402;
+$dash-ring-offset: ($screen-width / 8)+1px;
+.dash-ring {
+    position: absolute;
+    top: $dash-ring-offset;
+    left: $dash-ring-offset;
+    width: $dash-ring-width;
+    height: $dash-ring-width;
+    background: $screen-background-color;
+    border: $dash-ring-thickness dotted $dash-ring-color;
+    border-radius: 50%;
+}
+
+$solid-ring-thickness: 6px;
+$solid-ring-width: 160px - $solid-ring-thickness;
+$solid-ring-color: #EAA402;
+$solid-ring-offset: $dash-ring-offset+13px;
+.solid-ring {
+    position: absolute;
+    top: $solid-ring-offset;
+    left: $solid-ring-offset;
+    width: $solid-ring-width;
+    height: $solid-ring-width;
+    background: $screen-background-color;
+    border: $solid-ring-thickness solid $solid-ring-color;
+    border-radius: 50%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    font-size: 12px;
+}
+
+.middle {
+    display: flex;
+}
+
+.bpm {
+    width: 32px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.time {
+    font-size: 42px;
+}
+
+.calorie-count {
+    font-size: 12px;
+}
+
+.heart {
+    color: red;
+}
+
+.blink {
+    animation: blink 0.75s ease infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}

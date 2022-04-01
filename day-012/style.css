@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;500&display=swap");
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  -webkit-box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: white;
+  color: #181818;
+  font-family: 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.quote {
+  margin-bottom: 20px;
+}
+
+.quote::before {
+  content: '"';
+  position: absolute;
+  top: -30%;
+  left: -25%;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 84px;
+  color: #525252a1;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.tooltip {
+  color: #000000;
+  border-bottom: 3px solid #ffe600;
+}
+
+.tooltip .tooltip-text {
+  position: absolute;
+  top: -100%;
+  left: -8%;
+  width: 200px;
+  padding: 10px;
+  background-color: #242424;
+  border-radius: 5px;
+  color: #ffffff;
+  visibility: hidden;
+  font-size: 8px;
+}
+
+.tooltip .tooltip-text::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #242424 transparent transparent transparent;
+}
+
+.tooltip-title {
+  display: inline;
+  font-size: 8px;
+  background-color: #ffe600;
+  color: #242424;
+  padding: 1px;
+}
+
+.tooltip-ref {
+  font-size: 6px;
+  color: #696969;
+}
+
+.tooltip:hover {
+  background-color: #ffe600;
+  color: #000000;
+  cursor: pointer;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}

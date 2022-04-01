@@ -1,0 +1,92 @@
+@use 'template';
+:root {
+    --color-1: #9966cc;
+    --color-2: #007fff;
+    --color-3: #a4c639;
+}
+
+.frame {
+    @include template.frame;
+}
+
+.center {
+    @include template.center-v1;
+}
+
+.bg {
+    z-index: 1;
+    position: absolute;
+    left: -199px;
+    top: -190px;
+    width: 400px;
+    height: 400px;
+    border-left: 400px solid var(--color-1);
+    border-right: 400px solid var(--color-3);
+    background-color: var(--color-2);
+    transition: all 1s ease;
+}
+
+.circle {
+    z-index: 2;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.active {
+    position: absolute;
+    z-index: 2;
+    left: -16px;
+    top: -16px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 1s ease;
+}
+
+.radio-buttons {
+    z-index: 3;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: hidden;
+}
+
+#circle-1 {
+    transform: translateX(-56px);
+}
+
+#circle-3 {
+    transform: translateX(56px);
+}
+
+#radio-1:checked~.active {
+    transform: translateX(-56px);
+}
+
+#radio-2:checked~.active {
+    transform: translateX(0px);
+}
+
+#radio-3:checked~.active {
+    transform: translateX(56px);
+}
+
+#radio-1:checked~.bg {
+    transform: translateX(0px);
+}
+
+#radio-2:checked~.bg {
+    transform: translateX(-400px);
+}
+
+#radio-3:checked~.bg {
+    transform: translateX(-800px);
+}

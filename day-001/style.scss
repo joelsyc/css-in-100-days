@@ -1,0 +1,91 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: linear-gradient(to right top, #66e0ff, #757aff);;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.number{
+  height: 90px;
+
+}
+.one-1, .one-2 {
+  position: absolute;
+  top: 0px;
+  width: 25px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 6px #33333379;
+}
+
+.one-1 {
+  left: 0px;
+  height: 50px;
+  transform: rotate(50deg);
+}
+
+.one-2 {
+  left: 20px;
+  height: 100px;
+}
+
+.zero-1, .zero-2 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50px;
+  border: 25px solid #fff;
+  box-shadow: 0 0 6px #33333379;
+}
+
+.zero-1 {
+  left: 40px;
+}
+
+.zero-2 {
+  left: 130px;
+}
+
+.big, .small {
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 6px #33333379;
+  text-transform: uppercase;
+}
+
+.big {
+  font-size: 80px;
+  left: 15px;
+
+}
+
+.small {
+  font-size: 22px;
+  font-weight: 800;
+  left: 18px;
+  top: -15px;
+}

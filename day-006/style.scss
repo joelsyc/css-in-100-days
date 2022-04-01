@@ -1,0 +1,175 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+// use only the available space inside the 400x400 frame
+//
+//
+$main__background: linear-gradient(60deg, #64E5FF, #F5BC00);
+$widget__background: #fff;
+$widget__textcolor--default: #707070;
+$aside_block__background--odd: #CAFCFA;
+$aside_block__background--even: #8FF2F9;
+$aside_block--hover__background: #8FF2F9;
+//
+div {
+    border: 1px dashed #aaa;
+}
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: $main__background;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.widget {
+    width: 300px;
+    height: 300px;
+    background: $widget__background;
+    display: flex;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+    color: $widget__textcolor--default;
+    &_main {
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        &_photo {
+            background: $aside_block__background--odd;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &_img {
+                width: 75px;
+                height: 75px;
+                img {
+                    width: 75px;
+                    height: 75px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+            &_text {
+                position: absolute;
+                font-size: 12px;
+                font-weight: bold;
+                color: rgba(51, 51, 51, 0);
+                transition: background ease-in-out 0.25s;
+                transition: color ease-in-out 0.25s;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &:hover &_text {
+                color: rgb(51, 51, 51);
+                background: rgba(255, 255, 255, 0.50);
+            }
+        }
+        &_header {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            &_screen-name {
+                font-size: 14px;
+                font-weight: bold;
+            }
+            &_bio {
+                font-size: 10px;
+            }
+        }
+        &_buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &_aside {
+        width: 100px;
+        &_posts {
+            border-radius: 0px 2px 0px 0px;
+        }
+        &_followers {
+            border-radius: 0px 0px 2px 0px;
+        }
+    }
+}
+
+.aside {
+    &_block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        transition: background ease-in-out 0.5s;
+        &:nth-child(2n+1) {
+            background: $aside_block__background--odd;
+            &:hover {
+                background: #FFEDBC;
+                cursor: pointer;
+            }
+        }
+        &:nth-child(2n) {
+            background: $aside_block__background--even;
+            &:hover {
+                background: #FFEDBC;
+                cursor: pointer;
+            }
+        }
+        &_number {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        &_caption {
+            font-size: 10px;
+        }
+    }
+}
+
+.button {
+    width: 100px;
+    max-height: 25px;
+    border: 2px solid $widget__textcolor--default;
+    border-radius: 16px;
+    color: $widget__textcolor--default;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    margin: 5px;
+    background: $aside_block__background--odd;
+    transition: background ease-in-out 0.5s;
+    &:hover {
+        background: $aside_block--hover__background;
+        cursor: pointer;
+    }
+}

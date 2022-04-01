@@ -1,0 +1,215 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+// use only the available space inside the 400x400 frame
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #AA9400, #D5A206, #8F5200);
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//
+$widget__width: 300px;
+$widget__height: 300px;
+//
+.widget {
+    width: $widget__width;
+    height: $widget__height;
+    box-shadow: 4px 8px 16px #0000001a;
+    border-radius: 5px;
+    &_header {
+        z-index: 10;
+        top: 0%;
+        left: 0%;
+        position: absolute;
+        width: $widget__width;
+        height: 18%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        &_nav-icon,
+        &_title,
+        &_search-icon {
+            display: inline;
+        }
+        &_search-bar {
+            position: absolute;
+            display: inline-block;
+            //z-index: 15;
+            left: 30px;
+            width: 0px;
+            height: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: width 1s ease-in-out;
+            & input {
+                width: 200px;
+                height: 25px;
+            }
+        }
+        &_search-icon {
+            font-size: 20px;
+        }
+    }
+    &_main {
+        position: absolute;
+        z-index: 10;
+        top: 18%;
+        left: 0%;
+        width: $widget__width;
+        height: 82%;
+        &_accent {
+            z-index: 10;
+        }
+    }
+    &_navlist {
+        z-index: 1;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        width: 150px;
+        height: 250px;
+    }
+}
+
+.header {
+    background-color: #78C5FF;
+    color: #fff;
+    &_title {
+        font-weight: bold;
+    }
+    transition: transform 0.25s ease-in-out;
+    &--active {
+        transform: translate(140px, 0px);
+    }
+}
+
+.search {
+    &_icon {
+        width: 20px;
+        height: 20px;
+        transition: text-shadow 0.25s ease-in-out;
+        &:hover {
+            text-shadow: 0 0 8px rgb(0, 119, 255);
+            cursor: pointer;
+        }
+    }
+    &_bar {
+        border-radius: 8px;
+        overflow: hidden;
+        transition: width 1s ease-in-out;
+        &--active {
+            width: 200px;
+        }
+    }
+}
+
+.navicon {
+    width: 30px;
+    height: 20px;
+    font-size: 20px;
+    transition: text-shadow 0.25s ease-in-out;
+    &:hover {
+        text-shadow: 0 0 8px rgb(0, 119, 255);
+        cursor: pointer;
+    }
+}
+
+.main {
+    background-color: #fff;
+    transition: transform 0.25s ease-in-out;
+    &--active {
+        transform: translate(140px, 0px);
+    }
+}
+
+.notif {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    transition: color 0.25s ease-in-out;
+    &_dot {
+        display: inline-block;
+        z-index: 12;
+        width: 7px;
+        height: 7px;
+        background-color: #fff;
+        border: 2px solid #609FCE;
+        border-radius: 50%;
+        outline: 2px solid white;
+        margin: 5px 10px;
+        transition: background-color 0.25s ease-in-out;
+    }
+    &_group {
+        max-width: 80%;
+    }
+    &_time {
+        font-size: 12px;
+    }
+    &:hover {
+        color: #609FCE;
+        cursor: pointer;
+    }
+    &:hover &_dot {
+        background-color: #609FCE;
+    }
+}
+
+.accent {
+    position: absolute;
+    left: 37px;
+    width: 3px;
+    height: 100%;
+    z-index: 10;
+    background-color: #d8d8d8;
+}
+
+$navlist__background-color: #134763;
+$navlist__background-color--hover: #182530;
+.navlist {
+    background: $navlist__background-color;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    &_box {
+        padding: 10px;
+        background-color: $navlist__background-color;
+        transition: background-color 0.5s ease;
+        &:hover {
+            background-color: $navlist__background-color--hover;
+            cursor: pointer;
+        }
+        &:hover .navlist_text {
+            color: #ffffff;
+        }
+    }
+    &_text {
+        color: #609FCE;
+        transition: color 0.5s ease;
+    }
+    transition: transform 0.5s ease;
+    &--active {
+        transform: translate(-25px, 0px);
+    }
+}

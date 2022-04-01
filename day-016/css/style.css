@@ -1,0 +1,422 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #38baee;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.circle1 {
+  animation: circle1-animation 12s ease-in-out infinite;
+}
+
+.circle2 {
+  animation: circle2-animation 12s ease-in-out infinite;
+}
+
+.penta {
+  width: 133.3333333333px;
+  height: auto;
+  transform: translate(-50%, -50%) scale(0);
+  animation: penta-animation 12s ease-in-out infinite;
+}
+
+.tri {
+  width: 133.3333333333px;
+  height: auto;
+  animation: tri-animation 12s ease-in-out infinite;
+}
+
+.stripes {
+  width: 15px;
+  height: 5px;
+  background-color: #ffffff;
+  transform-origin: 100px;
+}
+
+.penta-stripe-0 {
+  transform: translate(-102.5px, 0%) rotate(90deg);
+  animation: penta-stripe-animation-0 12s ease-in-out infinite;
+}
+
+.penta-stripe-1 {
+  transform: translate(-102.5px, 0%) rotate(162deg);
+  animation: penta-stripe-animation-1 12s ease-in-out infinite;
+}
+
+.penta-stripe-2 {
+  transform: translate(-102.5px, 0%) rotate(234deg);
+  animation: penta-stripe-animation-2 12s ease-in-out infinite;
+}
+
+.penta-stripe-3 {
+  transform: translate(-102.5px, 0%) rotate(306deg);
+  animation: penta-stripe-animation-3 12s ease-in-out infinite;
+}
+
+.penta-stripe-4 {
+  transform: translate(-102.5px, 0%) rotate(378deg);
+  animation: penta-stripe-animation-4 12s ease-in-out infinite;
+}
+
+.tri-stripe-0 {
+  transform: translate(-102.5px, 12px) rotate(210deg);
+  transform-origin: 100px;
+  animation: tri-stripe-animation-0 12s ease-in-out infinite;
+}
+
+.tri-stripe-1 {
+  transform: translate(-102.5px, 12px) rotate(330deg);
+  transform-origin: 100px;
+  animation: tri-stripe-animation-1 12s ease-in-out infinite;
+}
+
+.tri-stripe-2 {
+  transform: translate(-102.5px, 12px) rotate(450deg);
+  transform-origin: 100px;
+  animation: tri-stripe-animation-2 12s ease-in-out infinite;
+}
+
+@keyframes circle1-animation {
+  0% {
+    transform: translate(-50px, -300px);
+  }
+  4% {
+    transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+  }
+  9% {
+    transform: translate(-50px, -201px);
+  }
+  13% {
+    transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+  }
+  17% {
+    transform: translate(-50px, -104px);
+  }
+  21% {
+    transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+  }
+  25% {
+    transform: translate(-50px, -50px) scaleX(1.1) scaleY(0.9);
+  }
+  30% {
+    transform: translate(-50px, -50px) scale(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px) scale(0, 0);
+  }
+}
+@keyframes penta-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  33% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  37% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  42% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  46% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+@keyframes penta-stripe-animation-0 {
+  0% {
+    transform: translate(-2.5px, 0%) rotate(90deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  42% {
+    transform: translate(-2.5px, 0%) rotate(90deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  46% {
+    transform: translate(-102.5px, 0%) rotate(90deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  50% {
+    transform: translate(-202.5px, 0%) rotate(90deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 0%) rotate(90deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes penta-stripe-animation-1 {
+  0% {
+    transform: translate(-2.5px, 0%) rotate(162deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  42% {
+    transform: translate(-2.5px, 0%) rotate(162deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  46% {
+    transform: translate(-102.5px, 0%) rotate(162deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  50% {
+    transform: translate(-202.5px, 0%) rotate(162deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 0%) rotate(162deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes penta-stripe-animation-2 {
+  0% {
+    transform: translate(-2.5px, 0%) rotate(234deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  42% {
+    transform: translate(-2.5px, 0%) rotate(234deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  46% {
+    transform: translate(-102.5px, 0%) rotate(234deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  50% {
+    transform: translate(-202.5px, 0%) rotate(234deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 0%) rotate(234deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes penta-stripe-animation-3 {
+  0% {
+    transform: translate(-2.5px, 0%) rotate(306deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  42% {
+    transform: translate(-2.5px, 0%) rotate(306deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  46% {
+    transform: translate(-102.5px, 0%) rotate(306deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  50% {
+    transform: translate(-202.5px, 0%) rotate(306deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 0%) rotate(306deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes penta-stripe-animation-4 {
+  0% {
+    transform: translate(-2.5px, 0%) rotate(378deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  42% {
+    transform: translate(-2.5px, 0%) rotate(378deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  46% {
+    transform: translate(-102.5px, 0%) rotate(378deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  50% {
+    transform: translate(-202.5px, 0%) rotate(378deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 0%) rotate(378deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes tri-stripe-animation-0 {
+  0% {
+    transform: translate(-2.5px, 12px) rotate(210deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  62% {
+    transform: translate(-2.5px, 12px) rotate(210deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  66% {
+    transform: translate(-102.5px, 12px) rotate(210deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  70% {
+    transform: translate(-202.5px, 12px) rotate(210deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 12px) rotate(210deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes tri-stripe-animation-1 {
+  0% {
+    transform: translate(-2.5px, 12px) rotate(330deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  62% {
+    transform: translate(-2.5px, 12px) rotate(330deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  66% {
+    transform: translate(-102.5px, 12px) rotate(330deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  70% {
+    transform: translate(-202.5px, 12px) rotate(330deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 12px) rotate(330deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes tri-stripe-animation-2 {
+  0% {
+    transform: translate(-2.5px, 12px) rotate(450deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  62% {
+    transform: translate(-2.5px, 12px) rotate(450deg);
+    transform-origin: 0px;
+    opacity: 0%;
+  }
+  66% {
+    transform: translate(-102.5px, 12px) rotate(450deg);
+    transform-origin: 100px;
+    opacity: 100%;
+  }
+  70% {
+    transform: translate(-202.5px, 12px) rotate(450deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(-202.5px, 12px) rotate(450deg);
+    transform-origin: 200px;
+    opacity: 0%;
+  }
+}
+@keyframes tri-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  62% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  68% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+@keyframes circle2-animation {
+  0% {
+    transform: translate(-50px, -50px) scale(0);
+  }
+  70% {
+    transform: translate(-50px, -50px) scale(0);
+  }
+  75% {
+    transform: translate(-50px, -50px) scale(1.5);
+  }
+  80% {
+    transform: translate(-50px, -50px) scale(1);
+  }
+  85% {
+    transform: translate(-50px, -50px) scale(1);
+  }
+  100% {
+    transform: translate(-50px, 200px) scale(1);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

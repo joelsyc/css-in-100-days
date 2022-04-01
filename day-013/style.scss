@@ -1,0 +1,177 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+// use only the available space inside the 400x400 frame
+$color_light: #fff1bb;
+$color_dark: #929292;
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: $color_light;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    width: 55px;
+    height: 55px;
+    background-color: $color_light;
+    border: 3px solid $color_dark;
+    border-radius: 50%;
+    color: $color_dark;
+    transition: all 0.25s ease-in-out;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--more {
+        font-size: 55px;
+        color: $color_light;
+        background-color: $color_dark;
+        border: 0px;
+    }
+    &--close {
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+    }
+    &--heart,
+    &--phone,
+    &--comment {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    &:hover {
+        background-color: $color_dark;
+        color: $color_light;
+        cursor: pointer;
+    }
+}
+
+.gallery {
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    padding: 3px;
+    &__tile {
+        position: relative;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__image {
+        transition: filter 0.5s ease-in-out;
+    }
+    &__button {
+        z-index: 3;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        opacity: 0%;
+        transform: translate(-50%, -50%) scale(2);
+    }
+    &__tile:hover &__image {
+        filter: grayscale(100%) contrast(50%);
+    }
+    &__tile:hover &__button {
+        opacity: 100%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.profile {
+    z-index: 4;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    transform: translate(0px, 400px);
+    transition: all 0.75s linear;
+    &__cover {
+        transform: translate(0px, -600px);
+        transition: all 0.5s ease-in-out;
+    }
+    &__close {
+        position: absolute;
+        top: 10px;
+        left: 355px;
+        transform: translate(0px, -450px);
+        transition: all 0.75s ease-in;
+    }
+    &__photo {
+        position: relative;
+        z-index: 6;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 80px);
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border: 3px solid $color_dark;
+        border-radius: 50%;
+        transition: all 1s ease-in-out;
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__info {
+        position: absolute;
+        top: 180px;
+        left: 0px;
+        width: 400px;
+        height: 220px;
+        background-color: $color_light;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__name {
+        margin-top: 20px;
+    }
+    &__actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.profile--active {
+    transform: translate(0px, 0px);
+    & .profile {
+        &__cover {
+            transform: translate(0px, 0px);
+        }
+        &__close {
+            transform: translate(0px, 0px);
+        }
+        &__photo {
+            transform: translate(-50%, -50%);
+        }
+        &__info {
+            top: 180px;
+            left: 0px;
+        }
+    }
+}

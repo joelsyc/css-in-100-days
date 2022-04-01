@@ -1,0 +1,183 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+// use only the available space inside the 400x400 frame
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.widget {
+    width: 400px;
+}
+
+.picture {
+    position: absolute;
+    top: -200px;
+    left: 0px;
+    z-index: 2;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(13, 13, 32);
+    overflow: hidden;
+    &__moon {
+        position: absolute;
+        z-index: 1;
+        width: 100px;
+        height: 100px;
+        top: 20px;
+        left: 20px;
+        border-radius: 50%;
+        background-color: rgb(252, 251, 224);
+        animation: moon-translate 1s ease-in-out forwards;
+    }
+    &__hill {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        &--front {
+            z-index: 5;
+            background-color: rgb(37, 42, 88);
+        }
+        &--back {
+            z-index: 3;
+            background-color: rgb(22, 25, 58);
+        }
+        //front
+        @for $i from 1 through 3 {
+            &--#{$i} {
+                transform: translate(-300px) translate(180px * $i, 75%);
+            }
+        }
+        //back
+        @for $i from 4 through 5 {
+            &--#{$i} {
+                transform: translate(-210px) translate(180px * ($i - 3), 68%);
+            }
+        }
+    }
+    &__rain {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        display: inline-block;
+        &--large {
+            z-index: 6;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        &--medium {
+            z-index: 4;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+        @for $i from 1 through 5 {
+            &--#{$i} {
+                animation: rain_animation-#{$i} 1s ease-in infinite;
+                animation-delay: random(5) * 200ms;
+            }
+            @keyframes rain_animation-#{$i} {
+                0% {
+                    left: (400px / 5) * $i;
+                    top: -40px;
+                    transform: rotate(20deg);
+                }
+                75% {
+                    left: (400px / 5) * $i - 0.5*(400px / 5);
+                    top: 270px;
+                    transform: rotate(20deg);
+                }
+                100% {
+                    left: (400px / 5) * $i - 0.75*(400px / 5);
+                    top: 280px;
+                    transform: rotate(20deg) scaleX(2) scaleY(0);
+                }
+            }
+        }
+        @for $i from 6 through 12 {
+            &--#{$i} {
+                animation: rain_animation-#{$i} 1.5s ease-in infinite;
+                animation-delay: random(5) * 200ms;
+            }
+            @keyframes rain_animation-#{$i} {
+                0% {
+                    left: (400px / 7) * ($i - 5);
+                    top: -40px;
+                    transform: rotate(20deg);
+                }
+                75% {
+                    left: (400px / 7) * ($i - 5) - 0.5*(400px / 7);
+                    top: 270px;
+                    transform: rotate(20deg);
+                }
+                100% {
+                    left: (400px / 5) * $i - 0.75*(400px / 5);
+                    top: 280px;
+                    transform: rotate(20deg) scaleX(2) scaleY(0);
+                }
+            }
+        }
+    }
+}
+
+.weather {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    &__temp {
+        grid-column: 1 / 1;
+        grid-row: 1 / 2;
+        font-size: 64px;
+    }
+    &__container-left {
+        grid-column: 2 / 2;
+        grid-row: 1 / 2;
+    }
+    &__container-right {
+        grid-column: 3 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
+@keyframes moon-translate {
+    from {
+        transform: translate(0%, 200%);
+    }
+    to {
+        transform: translate(0%, 0%);
+    }
+}

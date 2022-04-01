@@ -1,0 +1,238 @@
+@use '../../../_templates/scss/template' as template;
+$box-length: 400px;
+$animation-length: 12s;
+.frame {
+    @include template.frame;
+    background-color: rgb(56, 186, 238);
+}
+
+.center {
+    @include template.center-v1;
+}
+
+.circle {
+    //visibility: hidden;
+    // Sizing
+    width: calc($box-length/4);
+    height: calc($box-length/4);
+    // Shape
+    border-radius: 50%;
+    // Color
+    background-color: #ffffff;
+    box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
+}
+
+.circle1 {
+    // Animation
+    animation: circle1-animation $animation-length ease-in-out infinite;
+}
+
+.circle2 {
+    // Animation
+    animation: circle2-animation $animation-length ease-in-out infinite;
+}
+
+.penta {
+    //visibility: hidden;
+    // Sizing
+    width: calc($box-length/3);
+    height: auto;
+    transform: translate(-50%, -50%) scale(0);
+    // Animation
+    animation: penta-animation $animation-length ease-in-out infinite;
+}
+
+.tri {
+    //visibility: hidden;
+    // Sizing
+    width: calc($box-length/3);
+    height: auto;
+    // Animation
+    animation: tri-animation $animation-length ease-in-out infinite;
+}
+
+.stripes {
+    width: 15px;
+    height: 5px;
+    background-color: #ffffff;
+    transform-origin: 100px;
+}
+
+@for $i from 0 through 4 {
+    .penta-stripe-#{$i} {
+        //visibility: hidden;
+        transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+        animation: penta-stripe-animation-#{$i} $animation-length ease-in-out infinite;
+    }
+}
+
+@for $i from 0 through 2 {
+    .tri-stripe-#{$i} {
+        //visibility: hidden;
+        transform: translate(-102.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+        transform-origin: 100px;
+        animation: tri-stripe-animation-#{$i} $animation-length ease-in-out infinite;
+    }
+}
+
+@keyframes circle1-animation {
+    0% {
+        transform: translate(-50px, -300px);
+    }
+    4% {
+        transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+    }
+    9% {
+        transform: translate(-50px, -201px);
+    }
+    13% {
+        transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+    }
+    17% {
+        transform: translate(-50px, -104px);
+    }
+    21% {
+        transform: translate(-50px, -50px) scaleX(0.9) scaleY(1.1);
+    }
+    25% {
+        transform: translate(-50px, -50px) scaleX(1.1) scaleY(0.9);
+    }
+    30% {
+        transform: translate(-50px, -50px) scale(0, 0);
+    }
+    100% {
+        transform: translate(-50px, -50px) scale(0, 0);
+    }
+}
+
+@keyframes penta-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    33% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    37% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    42% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    46% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+}
+
+@for $i from 0 through 4 {
+    @keyframes penta-stripe-animation-#{$i} {
+        0% {
+            transform: translate(-2.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        42% {
+            transform: translate(-2.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        46% {
+            transform: translate(-102.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 100px;
+            opacity: 100%;
+        }
+        50% {
+            transform: translate(-202.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+        100% {
+            transform: translate(-202.5px, 0%) rotate( calc($i + 1) * 72deg + 18deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+    }
+}
+
+@for $i from 0 through 2 {
+    @keyframes tri-stripe-animation-#{$i} {
+        0% {
+            transform: translate(-2.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        62% {
+            transform: translate(-2.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 0px;
+            opacity: 0%;
+        }
+        66% {
+            transform: translate(-102.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 100px;
+            opacity: 100%;
+        }
+        70% {
+            transform: translate(-202.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+        100% {
+            transform: translate(-202.5px, 12px) rotate( calc($i + 1) * 120deg + 90deg);
+            transform-origin: 200px;
+            opacity: 0%;
+        }
+    }
+}
+
+@keyframes tri-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    62% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    68% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+}
+
+@keyframes circle2-animation {
+    0% {
+        transform: translate(-50px, -50px) scale(0);
+    }
+    70% {
+        transform: translate(-50px, -50px) scale(0);
+    }
+    75% {
+        transform: translate(-50px, -50px) scale(1.5);
+    }
+    80% {
+        transform: translate(-50px, -50px) scale(1);
+    }
+    85% {
+        transform: translate(-50px, -50px) scale(1);
+    }
+    100% {
+        transform: translate(-50px, 200px) scale(1);
+    }
+}
