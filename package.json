@@ -5,8 +5,8 @@
     },
 
     "scripts": {
-        "compile-sass": "sass ./day-019/scss/main.scss ./day-019/css/style.css",
-        "watch-sass": "sass --watch ./day-019/scss/main.scss ./day-019/css/style.css"
+        "compile-sass": "sass ./_production/scss/main-021.scss ./day-021/css/style.css",
+        "watch-sass": "sass --watch ./_production/scss/main-021.scss ./day-021/css/style.css"
 
     }
 }
